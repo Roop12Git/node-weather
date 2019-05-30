@@ -10,8 +10,8 @@ const forecast = (latitude,longitude,callback)=>{
         }else if(body.error){
             callback('Unable to fetch location', null)
         }else{
-           // console.log('Body : ', body);
-            callback(null, body.daily.data[0].summary+'It is currently ' + body.currently.temperature + ' degrees out. There is '+ body.currently.precipProbability + '% chances of rain')
+           //console.log( body.daily.data[0]);
+            callback(null, body.daily.data[0].summary+'It is currently ' + body.currently.temperature + ' degrees out. There is '+ body.currently.precipProbability + '% chances of rain with a windspeed of '+ body.currently.windSpeed +' mph' )
             }
     })
 
